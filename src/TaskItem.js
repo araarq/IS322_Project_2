@@ -17,9 +17,9 @@ const TaskItem = props => {
                 </div>
 
                 <button type="button"
-                        onClick={() => props.markReview(props.task)}
+                        onClick={() => props.markToDo(props.task)}
                         className="btn btn-primary mt-3 mr-3">
-                    Review
+                    To Do
                 </button>
                 <button type="button"
                         onClick={() => props.markInProgress(props.task)}
@@ -27,9 +27,9 @@ const TaskItem = props => {
                     InProgress
                 </button>
                 <button type="button"
-                        onClick={() => props.markToDo(props.task)}
+                        onClick={() => props.markReview(props.task)}
                         className="btn btn-primary mt-3 mr-3">
-                    To Do
+                    Review
                 </button>
             </div>
         </div>

@@ -17,6 +17,7 @@ class App extends React.Component {
         this.getData();
     }
 
+    // API request
     getData() {
         axios.get('http://my-json-server.typicode.com/bnissen24/project2DB/posts')
             .then(response => {
@@ -34,12 +35,12 @@ class App extends React.Component {
         this.setState({ view: "addTaskView"});
     }
 
-    onAddTask = (taskName) => {
+    onAddTask = (taskName, taskType) => {
         let tasks = this.state.tasks;
         tasks.push({
             title: taskName,
             id: this.state.tasks.length + 1,
-            type: 'task',
+            type: taskType,
             column: 'todo'
         });
 
