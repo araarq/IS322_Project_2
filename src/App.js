@@ -44,6 +44,7 @@ class App extends React.Component {
         });
 
         this.setState({ tasks });
+        this.setState({view: "gridView"})
     };
 
     onUpdateTaskList = (newTaskList) => {
@@ -51,18 +52,21 @@ class App extends React.Component {
     };
 
     render() {
-        let view;
+        // Conditional rendering
+        let view, navBar;
 
         if (this.state.view === "gridView") {
+            navBar = <NavBar view={this.state.view} onClick={this.handleAddTaskClick} />;
             view = <GridView tasks={this.state.tasks} onUpdateTaskList={this.onUpdateTaskList} />;
         }
         else {
+            navBar = <NavBar view={this.state.view} onClick={this.handleGridViewClick} />;
             view = <AddTaskView onSubmit={this.onAddTask} />;
         }
 
         return (
             <div>
-                <NavBar view={this.state.view} />
+                {navBar}
                 {view}
             </div>
         );
