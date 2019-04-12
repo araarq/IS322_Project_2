@@ -8,7 +8,7 @@ class App extends React.Component {
     state = {
         tasks: [],
         errorMessage: ''
-    }
+    };
 
     componentDidMount() {
         this.getData();
@@ -33,22 +33,20 @@ class App extends React.Component {
         });
 
         this.setState({ tasks });
-    }
+    };
 
     onUpdateTaskList = (newTaskList) => {
         this.setState({ tasks: newTaskList });
-    }
+    };
 
     render() {
         return (
             <div className="container">
                 <AddTask onSubmit={this.onAddTask} />
                 <TaskList tasks={this.state.tasks} onUpdateTaskList={this.onUpdateTaskList} />
-
             </div>
         );
     }
-
 }
 
 export default App;

@@ -10,9 +10,9 @@ const TaskItem2 = props => {
                 Done
             </button>
             <button type="button"
-                    onClick={() => props.markInProgress(props.task)}
+                    onClick={() => props.markReview(props.task)}
                     className="btn btn-primary" style={{ float: 'right' }}>
-                InProgress
+                Review
             </button>
             <button type="button"
                     onClick={() => props.markToDo(props.task)}
