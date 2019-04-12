@@ -1,0 +1,7 @@
+.notCurrent {
+    color: rgb(0, 0, 255);
+}
+
+.current {
+    color: #000000;
+}

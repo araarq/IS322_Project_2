@@ -1,6 +1,6 @@
 import React from 'react';
 
-class AddTask extends React.Component {
+class AddTaskView extends React.Component {
     state = { newTask: '' };
 
     onFormSubmit = (event) => {
@@ -23,4 +23,4 @@ class AddTask extends React.Component {
     };
 }
 
-export default AddTask;
+export default AddTaskView;

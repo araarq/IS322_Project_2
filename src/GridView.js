@@ -1,5 +1,5 @@
 import React from 'react';
-import './styles/TaskList.css';
+import './styles/GridView.css';
 
 import TaskItem from './TaskItem';
 import TaskItem2 from './Taskitem2';
@@ -7,7 +7,7 @@ import TaskItem3 from './Tastitem3';
 import TaskItem4 from './TaskItem4';
 
 
-class TaskList extends React.Component {
+class GridView extends React.Component {
 
     constructor(props) { // Inside of a class we don't need the function keyword or a fat arrow.
         super(props); // Send props to it's superclass React.Component
@@ -108,4 +108,4 @@ class TaskList extends React.Component {
     }
 }
 
-export default TaskList;
+export default GridView;
