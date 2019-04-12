@@ -41,7 +41,7 @@ class App extends React.Component {
 
     render() {
         return (
-            <div className="container">
+            <div>
                 <AddTask onSubmit={this.onAddTask} />
                 <TaskList tasks={this.state.tasks} onUpdateTaskList={this.onUpdateTaskList} />
             </div>

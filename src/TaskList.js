@@ -1,4 +1,5 @@
 import React from 'react';
+import './styles/TaskList.css';
 
 import TaskItem from './TaskItem';
 import TaskItem2 from './Taskitem2';
@@ -45,10 +46,11 @@ class TaskList extends React.Component {
     };
 
     render() {
-        const taskItems = this.props.tasks.map(task => {
-            if(task.column === "done")
-                return <TaskItem task={task} key={task.id} markToDo={this.markToDo}  markInProgress={this.markInProgress} markReview={this.markReview} markDone={this.markDone}/>
+        const taskItems3 = this.props.tasks.map(task => {
+            if(task.column === "todo")
+                return <TaskItem3 task={task} key={task.id} markToDo={this.markToDo} markInProgress={this.markInProgress} markReview={this.markReview} markDone={this.markDone}/>
         });
+
         const taskItems2 = this.props.tasks.map(task => {
             if(task.column === "in-progress")
                 return <TaskItem2 task={task} key={task.id} markToDo={this.markToDo} markInProgress={this.markInProgress} markReview={this.markReview} markDone={this.markDone}/>
@@ -56,25 +58,52 @@ class TaskList extends React.Component {
 
         const taskItems4 = this.props.tasks.map(task => {
             if(task.column === "review")
-                return <TaskItem4 task={task} key={task.id} markToDo={this.markToDo} markInProgress={this.markInProgress} markDone={this.markDone} markDone={this.markDone}/>
+                return <TaskItem4 task={task} key={task.id} markToDo={this.markToDo} markInProgress={this.markInProgress} markReview={this.markReview} markDone={this.markDone}/>
         });
 
-        const taskItems3 = this.props.tasks.map(task => {
-            if(task.column === "todo")
-                return <TaskItem3 task={task} key={task.id} markToDo={this.markToDo} markInProgress={this.markInProgress} markReview={this.markReview} markDone={this.markDone}/>
+        const taskItems = this.props.tasks.map(task => {
+            if(task.column === "done")
+                return <TaskItem task={task} key={task.id} markToDo={this.markToDo}  markInProgress={this.markInProgress} markReview={this.markReview} markDone={this.markDone}/>
         });
 
         return (
-            <ul className="task-list list-group">
-                <h3>To Do</h3>
-                {taskItems3}
-                <h3>In Progress</h3>
-                {taskItems2}
-                <h3>Review</h3>
-                {taskItems4}
-                <h3>Done</h3>
-                {taskItems}
-            </ul>
+            <div className="row">
+                <div className="col p-0">
+                    <div className="card oddCard fullHeight">
+                        <div className="card-body">
+                            <div className="card-title"><h2>To Do</h2></div>
+                                {taskItems3}
+                        </div>
+                    </div>
+                </div>
+
+                <div className="col p-0">
+                    <div className="card evenCard fullHeight">
+                        <div className="card-body">
+                            <div className="card-title"><h2>In Progress</h2></div>
+                            {taskItems2}
+                        </div>
+                    </div>
+                </div>
+
+                <div className="col p-0">
+                    <div className="card oddCard fullHeight">
+                        <div className="card-body">
+                            <div className="card-title"><h2>Review</h2></div>
+                            {taskItems4}
+                        </div>
+                    </div>
+                </div>
+
+                <div className="col p-0">
+                    <div className="card evenCard fullHeight">
+                        <div className="card-body">
+                            <div className="card-title"><h2>Done</h2></div>
+                            {taskItems}
+                        </div>
+                    </div>
+                </div>
+            </div>
         )
     }
 }
